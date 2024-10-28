@@ -24,7 +24,6 @@ nav{
    
     display: flex;
   
-   
     padding: 0 15% 0 5% ;
     
     a{
@@ -42,6 +41,104 @@ nav{
     }
   } 
 }
+
+
+/* Sección de Landing Page */
+#saga-training {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Título y Subtítulo */
+#saga-training h1 {
+  color: var(--color-text);
+  font-size: 3.5rem;
+  font-family: "Georgia", serif;
+  animation: fadeInDown 1.5s ease-out;
+  letter-spacing: 1px;
+}
+#saga-training p {
+  
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  animation: fadeInUp 1.5s ease-out;
+}
+
+/* Efecto de Fade-In para el texto */
+@keyframes fadeInDown {
+  0% {
+      opacity: 0;
+      transform: translateY(-50px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(50px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Botón de llamada a la acción */
+#saga-training .btn-primary {
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  background-color: var(--color-button);
+  border: none;
+  color: var(--color-text);
+  border-radius: 8px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efecto hover del botón */
+#saga-training .btn-primary:hover {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  transform: scale(1.05);
+}
+
+/* Fondo de Gradiente Animado */
+#saga-training {
+  height: 100vh;
+  background: linear-gradient(45deg, var(--color-secondary), var(--color-button));
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animación de movimiento de gradiente */
+@keyframes gradientAnimation {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+
 section {
   margin-bottom: 2rem;
 }
