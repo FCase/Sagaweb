@@ -187,36 +187,133 @@ img:hover {
 text-align: center;
 }
 
-#videos{
-  h2{
-    color: var(--color-bg);
+/* Estilos Generales */
+#videosYT {
+  padding: 50px 0;
+  background-color: #0a0908;
+}
+
+#videosYT h2 {
+  color: #eae0d5;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+#videos {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas grandes */
+}
+
+/* Estilo para los contenedores de video */
+#videos .video-container {
+  padding: 10px;
+  border: 2px solid #22333b;
+  border-radius: 10px;
+  background-color: #22333b;
+  transition: transform 0.3s;
+}
+
+#videos .video-container:hover {
+  transform: scale(1.05);
+}
+
+#videos .video-container iframe {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.text-accent {
+  color: #c6ac8f;
+}
+
+/* Media Query para Mobile */
+@media (max-width: 768px) {
+  #videos {
+    grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    gap: 15px;
+  }
+
+  #videosYT {
+    padding: 30px 15px;
+  }
+
+  #videosYT h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  #videos .video-container {
+    max-width: 100%;
+    margin: 0 auto;
   }
 }
 
-#blog{
-  h2, p{
+
+
+#blog {
+  /* Estilos para los títulos y párrafos */
+  h2, p {
     color: var(--color-bg);
   }
-  h3{
+  h3 {
     color: var(--color-button);
+  } 
+}
+
+#blog .blog-container {
+  display: flex;
+  flex-direction: column; /* Coloca los artículos en columna */
+  max-height: 60vh; /* Altura máxima para mostrar tres artículos */
+  overflow-y: auto; /* Activa el desplazamiento vertical */
+  gap: 1rem; /* Espacio entre artículos */
+  padding: 1rem 0;
+}
+
+#blog .blog-container article {
+  height: calc(60vh / 3 - 1rem); /* Calcula la altura de cada artículo */
+  background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  border-radius: 12px;
+  border: 1px solid var(--color-button);
+  background-color: whitesmoke;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center; /* Alinea el contenido al centro, incluyendo el botón */
+}
+
+#blog .blog-container article button {
+  background-color: var(--color-accent);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 auto; /* Centra el botón */
+  width: fit-content; /* Ajusta el ancho del botón al contenido */
+}
+
+#blog .blog-container article button a {
+  text-decoration: none;
+  color: white;
+}
+
+#blog .blog-container article button a:hover {
+  color: black;
+  transition: color 0.3s ease;
+}
+
+/* Ajuste adicional para pantallas pequeñas */
+@media (max-width: 600px) {
+  #blog .blog-container {
+    max-height: 100vh; /* Ajusta la altura en dispositivos móviles */
   }
-  article{
-    box-shadow: 2px 2px 8px 0 var(--color-button), 4px 4px 16px 0 var(--color-text), 0px 0px 24px 2px var(--color-bg);
-    border-radius: 12px;
-    border-color: var(--color-button);
-    background-color:whitesmoke ;
-  }
-  button{
-    background-color: var(--color-accent);
-    a{
-      text-decoration: none;
-      color: white;
-    }
-    a:hover{
-      
-      color: black;
-      transition: 1s;
-    }
+  
+  #blog .blog-container article {
+    height: auto; /* Deja que el artículo ajuste su altura según el contenido */
   }
 }
 
@@ -230,6 +327,8 @@ text-align: center;
     flex-direction: row;
     justify-content: space-around;
   }
+
+ 
 }
 
 
